@@ -1,0 +1,67 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap');
+@import url('https://fonts.googleapis.com/css?family=UnifrakturMaguntia');
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 15px;
+    width: auto;
+    margin: auto;
+}
+    .boxA {
+        grid-row-start: 1;
+        grid-row-end: 5;
+        margin-bottom: 0px;
+        /* background-color: #E5D2A8; */
+    }
+    .boxB {
+        grid-row-start: 1;
+        grid-row-end: 5;
+        margin-bottom: 0px;
+    }
+
+h1 {
+    text-align: center;
+    font-family: 'UnifrakturMaguntia', serif;
+    font-size: 60px;
+    color: white;
+    -webkit-text-stroke:.5px black;
+    -webkit-text-fill-color:white;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+h2 {
+    text-align: center;
+    font-family: 'UnifrakturMaguntia', serif;
+    font-size: 40px;
+    color: white;
+    -webkit-text-stroke:.25px white;
+    -webkit-text-fill-color:black;
+}
+p {
+    text-align: left;
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 18px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-image: url("https://thumbs.dreamstime.com/b/gold-texture-seamless-pattern-horizontal-light-realistic-shiny-metallic-empty-golden-gradient-template-abstract-metal-decoration-78816441.jpg");
+    object-fit: fill;
+    color: white;
+    text-align: center;
+  }
+  html { 
+    background: url(https://tierrasuratherzog.com/wp-content/uploads/2019/05/TS-Wedding-Paper-BG.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }

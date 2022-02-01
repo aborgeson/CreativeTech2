@@ -1,0 +1,75 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap');
+@import url('https://fonts.googleapis.com/css?family=UnifrakturMaguntia');
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 15px;
+    width: auto;
+    margin: auto;
+}
+    .boxA {
+        margin-bottom: 0px;
+        /* background-color: #E5D2A8; */
+    }
+    .boxB {
+        background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Lancelot_passant_le_pont_de_l%27%C3%89p%C3%A9e.jpg/440px-Lancelot_passant_le_pont_de_l%27%C3%89p%C3%A9e.jpg");
+        overflow: auto;
+        max-width: 100%
+    }
+    .boxC {
+        background-image: url("https://cdn.historycollection.com/wp-content/uploads/2018/04/Lancelot-in-the-cart-13th-century-France-Blogspot.jpg");
+        overflow: auto;
+        max-width: 100%
+    }
+    .boxD {
+        /* background-color: #4F81BD; */
+        margin-bottom: 0px;
+    }
+
+h1 {
+    text-align: center;
+    font-family: 'UnifrakturMaguntia', serif;
+    font-size: 60px;
+    color: white;
+    -webkit-text-stroke:.5px black;
+    -webkit-text-fill-color:white;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+h2 {
+    text-align: center;
+    font-family: 'UnifrakturMaguntia', serif;
+    font-size: 40px;
+    color: white;
+    -webkit-text-stroke:.25px white;
+    -webkit-text-fill-color:black;
+}
+p {
+    text-align: left;
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 18px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-image: url("https://thumbs.dreamstime.com/b/gold-texture-seamless-pattern-horizontal-light-realistic-shiny-metallic-empty-golden-gradient-template-abstract-metal-decoration-78816441.jpg");
+    object-fit: fill;
+    color: white;
+    text-align: center;
+  }
+
+  html { 
+    background: url(https://tierrasuratherzog.com/wp-content/uploads/2019/05/TS-Wedding-Paper-BG.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
