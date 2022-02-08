@@ -10,6 +10,59 @@ h1 {
 }
 h2{
     font-family: 'Quantico', sans serif;
-    font-weight: 400;
-    text-align: center;
+    font-weight: 300;
+    text-align: left;
 }
+
+.grid-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    width: auto;
+    height: 100vh;
+    align-items: center;
+    }
+    .giTop {
+        grid-row: 1 / 2;
+        background: none;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .gi1 {
+        grid-row: 2 / 3;
+        background: none;
+    }
+    .gi2 {
+        grid-row: 3 / 4;
+        background: none;
+
+    }
+    .gi3 {
+        grid-row: 4 / 5;
+        background: none;
+
+    }
+    .gi4 {
+        grid-row: 5 / 6;
+        background: none;
+    }
+    .gi5 {
+        grid-row: 6 / 7;
+        background: none;
+    }
+    .gi6 {
+        grid-row: 7 / 8;
+        background: none;
+    }
+    .gi7 {
+        grid-row: 8 / 9;
+        background: none;
+    }
+    .gi8 {
+        grid-row: 9 / 10;
+        background: none;
+    }
+    .gi9 {
+        grid-row: 10 / 11;
+        background: none;
+    }
+    

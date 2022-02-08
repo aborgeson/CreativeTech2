@@ -1,0 +1,94 @@
+/* this sheet defines the moving css, reset defines the immovable basics */
+@import url('reset.css');
+@import url('type.css');
+@import url('grid.css');
+
+html {
+background: linear-gradient(rgb(1, 1, 133), rgb(3, 0, 41));
+height: 100%;
+}
+
+
+@media (min-width: 100px) and (max-width: 429px){
+    .text {
+        grid-row: 1 / 2;
+    }
+    .midSun {
+        display: none;
+    }
+    .bottomSun {
+        display: none;
+    }
+    .bottomMoon {
+        display: none;
+    }
+}
+
+@media (min-width: 430px) and (max-width: 650px){
+    .text {
+        grid-row: 2 / 3;
+    }
+    .midSun {
+        display: none;
+    }
+    .bottomSun {
+        display: none;
+    }
+    .midMoon {
+        display: none;
+    }
+}
+
+
+@media (min-width: 650px) and (max-width: 767px){
+    .text {
+        grid-row: 3 / 4;
+    }
+    .midSun {
+        display: none;
+    }
+    .bottomSun {
+        display: none;
+    }
+    .bottomMoon {
+        display: none;
+    }
+    .midMoon {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width:959px) {
+    html {
+        background: linear-gradient(rgb(247, 156, 0), rgb(1, 1, 133));
+        height: 100%;
+        }
+        .text {
+            grid-row: 2 / 3;
+        }
+        .midSun {
+            display: none;
+        }
+        .bottomMoon {
+            display: none;
+        }
+        .midMoon {
+            display: none;
+        }
+}
+
+@media (min-width: 960px){
+    html {
+        background-image: linear-gradient(rgb(131, 216, 247), rgb(247, 156, 0));
+        height: 100%;
+        }
+    .bottomSun {
+        display: none;
+        }
+        .bottomMoon {
+            display: none;
+        }
+        .midMoon {
+            display: none;
+        }
+}
