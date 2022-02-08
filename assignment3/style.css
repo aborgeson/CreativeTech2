@@ -9,7 +9,7 @@ height: 100%;
 }
 
 
-@media (min-width: 100px) and (max-width: 429px){
+@media (min-width: 100px) and (max-width: 500px){
     .text {
         grid-row: 1 / 2;
     }
@@ -24,7 +24,7 @@ height: 100%;
     }
 }
 
-@media (min-width: 430px) and (max-width: 650px){
+@media (min-width: 500px) and (max-width: 650px){
     .text {
         grid-row: 2 / 3;
     }
