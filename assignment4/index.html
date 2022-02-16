@@ -4,14 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+
 </head>
-<body>
-    <main>
-        <main class="grid-container">
-            <div class="grid-item" id="gi1">Nighttime text</div>
-            <div class="grid-item" id="gi2"></div>
-            <div class="grid-item" id="gi3">Sunset text</div>
-        </main>
+<body id="body">
+
+    <div class="top-images">
+        <div class="small-image">
+            <img src="https://pngimg.com/uploads/dolphin/dolphin_PNG71368.png" alt="image-1" style="width:100%" onclick="imageExpand(this);">
+        </div>
+        <div class="small-image">
+            <img src="https://www.freepnglogos.com/uploads/dolphin-png/sea-screamer-dolphin-tours-clearwater-guaranteed-2.png" alt="image-2" style="width:100%" onclick="imageExpand(this);">
+        </div>
+        <div class="small-image">
+            <img src="https://pngimg.com/uploads/dolphin/dolphin_PNG71369.png" alt="image-3" style="width:100%" onclick="imageExpand(this);">
+        </div>
+        <div class="small-image">
+            <img src="https://pngimg.com/uploads/dolphin/dolphin_PNG71360.png" alt="image-4" style="width:100%" onclick="imageExpand(this);">
+        </div>
+        </div>
+
+        <img class="bottom-image" alt="" id="expandedImage">
+          </img>
+
+          <script src="./script.js"></script>
+
+    
 </body>
 </html>

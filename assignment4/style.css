@@ -1,27 +1,43 @@
-.grid-container {
-    display: grid;
-    grid-auto-rows: 100%;
-    width: auto;
-    margin: auto;
+
+ * {
+    box-sizing: border-box;
+  }
+
+ 
+ body {
+     margin: 0px;
+     background-image: url("https://wallpaperaccess.com/full/1166781.jpg"); 
+ }
+
+.top-images {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
 }
-    #top1 {
-        grid-column-start: 1;
-        grid-column-end: 3;
-        grid-row-start: 1;
-        grid-row-end: 2;
-        margin-bottom: 0px;
+
+    .small-image {
+        /* overflow: hidden; */
+        float: left;
+        padding-right: 10px;
+        padding-left: 10px;
+        padding-bottom: 10px;
+        width: 25%;
+      }
+    .small-image img {
+        cursor: pointer;
+      }
+
+      /* Clear floats after the columns */
+    .top-images:after {
+        content: "";
+        display: table;
+        clear: both;
     }
-    #mid {
-        grid-column-start: 1;
-        grid-column-end: 3;
-        grid-row-start: 2;
-        grid-row-end: 3;
-        margin-bottom: 0px;
-    }
-    #bottom {
-        grid-column-start: 1;
-        grid-column-end: 3;
-        grid-row-start: 3;
-        grid-row-end: 4;
-        margin-bottom: 0px;
-    }
+    .bottom-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        width: 60%;
+      }
