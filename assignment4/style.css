@@ -9,6 +9,10 @@
      background-image: url("https://wallpaperaccess.com/full/1166781.jpg"); 
  }
 
+ img {
+   max-width: 100%;
+ }
+
 .top-images {
     display: block;
     margin-left: auto;
