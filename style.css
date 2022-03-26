@@ -14,6 +14,88 @@ h2{
     text-align: left;
 }
 
+.hiddenimg1 {
+    display: none;
+  }
+
+.hiddentxt1:hover ~ .hiddenimg1 {
+    display: inline-flex;
+    position: absolute;
+    z-index: 9;
+    left: 50%;
+    right: 50%;
+  }
+  .hiddenimg2 {
+    display: none;
+  }
+
+.hiddentxt2:hover ~ .hiddenimg2 {
+    display: inline-flex;
+    position: absolute;
+    z-index: 9;
+    left: 50%;
+    right: 50%;
+    top: 38%;
+  }
+  .hiddenimg3 {
+    display: none;
+  }
+
+.hiddentxt3:hover ~ .hiddenimg3 {
+    display: inline-flex;
+    position: absolute;
+    z-index: 9;
+    left: 50%;
+    right: 50%;
+    top: 46%;
+  }
+  .hiddenimg4 {
+    display: none;
+  }
+
+.hiddentxt4:hover ~ .hiddenimg4 {
+    display: inline-flex;
+    position: absolute;
+    transform: translate(-90%);
+    z-index: 9;
+    left: 50%;
+    right: 50%;
+    top: 55%;
+  }
+  .hiddenimg5 {
+    display: none;
+  }
+
+.hiddentxt5:hover ~ .hiddenimg5 {
+    display: inline-flex;
+    position: absolute;
+    z-index: 9;
+    left: 50%;
+    right: 50%;
+  }
+  .hiddenimg6 {
+    display: none;
+  }
+
+.hiddentxt6:hover ~ .hiddenimg6 {
+    display: inline-flex;
+    position: absolute;
+    z-index: 9;
+    left: 50%;
+    right: 50%;
+  }
+  .hiddenimg7 {
+    display: none;
+  }
+
+.hiddentxt7:hover ~ .hiddenimg7 {
+    display: inline-flex;
+    position: absolute;
+    z-index: 9;
+    left: 50%;
+    right: 50%;
+  }
+  
 .grid-container {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -27,15 +109,16 @@ h2{
         padding-left: 20px;
         padding-right: 20px;
     }
+  
     .gi1 {
-        grid-row: 2 / 3;
+        grid-row: 2/ 3;
         background: none;
     }
+
     .gi2 {
         grid-row: 3 / 4;
         background: none;
-
-    }
+        }
     .gi3 {
         grid-row: 4 / 5;
         background: none;
@@ -57,12 +140,5 @@ h2{
         grid-row: 8 / 9;
         background: none;
     }
-    .gi8 {
-        grid-row: 9 / 10;
-        background: none;
-    }
-    .gi9 {
-        grid-row: 10 / 11;
-        background: none;
-    }
-    
+
+  

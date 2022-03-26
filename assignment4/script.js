@@ -7,7 +7,7 @@ var t4 = document.getElementById("thumb-4");
 function imageExpand(evnt) {
     console.info(evnt);
     expandIMG.src = evnt.target.src;
-    // expandIMG.parentElement.style.display = "block";
+    // makes the source of expandIMG the target of the souce event - whichever is clicked
 }
 
 t1.addEventListener("click", imageExpand)
