@@ -5,131 +5,86 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-    <!-- //load p5js library before the rest of the script -->
+    <div class="navbar">
+        <a href="https://aborgeson.github.io/CreativeTech2/index.html">Arianna's Creative Tech 2 Page</a>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
+    <script src="sketch.js"></script>
+    <div class="grid">
+        <div class="boxA">
+            <div class="canvas" id="canvas">
+                <script src="sketch.js"></script>
+            </div>
+        </div>
+        <div class="boxB">
+            <h1>The Mediated Extension of Self</h1>
+            <h2>Design Brief:</h2>
+            <p>
+                From Marx to McLuhan and beyond the idea that the technology - in the broadest sense - is what augments the human and makes us stand out among the rest of the animal kingdom has permeated the discussion about the relationships between ourselves and our media. Tools augment our physical ability, information storage and disseminaation techniques extend the capacity of our minds. But in all those conversations the focus has been disctincly outward, to the world outside of our selves and our bodies. I will ask you to see how the technolgy can be pointed inward.
+            </p>
+                <p>For this project we are going to explore how digital technolgy extends and augments our senses, our bodies and our visions of ourselves. We'll start by creating devices that would allow us to collect data from our immediate surroundings; that would serve as extensions of our bodies and sensory organs. We will organize and distill this data to a meaningful set and explore ways of presenting it that could uncover possible underlying patterns.</p>
+        </div>
+        <div class="boxC">
+            <img src="https://freight.cargo.site/w/1500/q/75/i/74a38a39936e45945b10ebc8953d51a6973646489ef53577767a310fdc50b045/IMG_6176.jpeg">
+            <img src="https://freight.cargo.site/w/1500/q/75/i/970ea3e6dcf40b8f5d847b526a6c21691b03b12e5cdf051c0f4e3fbf5dd52ffd/IMG_6175.jpeg">
+            <img src="https://freight.cargo.site/w/1500/q/75/i/b4e7ecb74500e43ce2f1f93fbb87b0499dbdf434fa2aef689af92ac68a5f29b4/006-uv-feed.png">
+            <img src="https://freight.cargo.site/w/1500/q/75/i/99456393691632a51881c08ba549dd1a8473d106c133a5c64295359d8b521e14/005-light-feed.png">
 
-    <script>
-        let ioURL= "https://io.adafruit.com/api/v2/ariannaborgeson/feeds/testsensorfeed/data?";
-        let ioUVURL= "https://io.adafruit.com/api/v2/ariannaborgeson/feeds/uvsensorfeed/data?";
-        let ioLimitQuery = "limit="
-        let ioLimitNumbers = "1000";
-       //uncomment if not using a range - ioinclude limits the values
-        // let ioInclude = "include=value";
-        //set a start and end time
-        let ioStart = "start_time=";
-        let ioStartVal = "2022-03-13T09:45Z";
-        let ioEnd = "end_time=";
-        let ioEndVal = "2022-03-13T09:55Z";
+        </div>
+        <div class="boxD">
+            <h2>Construction</h2>
+            <p>I began this process by thinking about moments of uncertainty in my interactions with the world. I have very sensitive skin and wear sunscreen every day, but I wasn’t certain how much sun exposure I was actually getting, so I set out to measure and visualize it. I began with a UV sensor and a light sensor connected on a breadboard to an ESP32. I used a battery until it died, and then used a mobile phone battery to power the board so that I could carry my device with me. I found an old box that had a clear cover, which was perfect for holding the device. In order to make sure the sensors were getting light, I stuffed the box with paper until the sensors pressed up against the clear cover.
+            </p>
+            <p>Once I had my device constructed, I tested it out. I setup Adafruit IO and connected to the ESP32 using wifi. I tried to get a mobile hotspot connected so that I could carry the device with me, but unfortunately it didn’t work. First, I setup the light sensor and UV sensor separately. Using the serial monitor alongside Adafruit IO, I checked the readings to make sure that my sensors were connecting, and then combined the two connections into one code. I was getting errors with the UV sensor mapping to the same values as the light sensor (0-4095) instead of its own (0-10). As I edited the code down, I realized that I could remove the sensorVal variable that stored the UV data since the UV data already had a variable, and the problem was fixed.</p>
+        </p>
+        </div>
+        <div class="boxE">
+            <img src="https://freight.cargo.site/w/1634/q/94/i/58c753b8b074b8783cc7525dec821b6082ad22cca601bd2b1b19c676cb1c23ab/007-Light-Sunset.png">
+            <img src="https://freight.cargo.site/w/1356/q/94/i/f1a9ab7599518b044cf6f7371f4c5435f6498c49166ed6126f6b0a0a064ca73a/008-UV-Sunset.png">
 
-        let data;
-        let valueSets = [];
-        let buttonPressed = false;
-
-
-        // let lightValues = [];
-        // let lightTimes = [];
-        // let uvValues = [];
-        // let uvTimes = [];
-
-
-
-    //preload a function to assign to io values, info of data, and error functions to data variable
-        function preload(){
-          fetchData();
-        }
-//change to HSB to adjust the brightness using the lightvalues
-        function setup(){
-            colorMode(HSB, 360, 100, 100);
-            createCanvas(800, 800);
-        }
-
-        function draw(){ 
-            background(182, 52, 84);
-
-            if (buttonPressed) {
-                valueSets.forEach((obj,i) => {
-                    noStroke();
-                    rectMode(CENTER);
-                    //map light values to HSB circle, make them fill colors
-                    fill(map(obj.lightValue, 0, 4095, 0, 360)/5, map(obj.lightValue, 0, 4095, 0, 360), map(obj.lightValue, 0, 4095, 0, 360));
-                    //x pos is time, vx values are height       
-                    rect(obj.lightTime.getMinutes()*15, 400, 10, obj.uvValue*100);
-                    // buttonText = 'Go to Arc View';
-            })
-        }
-            else {
-            valueSets.forEach((obj,i) => {
-                    // rectMode(CENTER);
-                //fill(lightValues[i]*10, lightValues[i]*20, lightValues[i]*30);
-                //map light values to HSB circle, make them fill colors
-                    stroke(map(obj.lightValue, 0, 4095, 0, 360)/5, map(obj.lightValue, 0, 4095, 0, 360), map(obj.lightValue, 0, 4095, 0, 360));
-                 //x and y pos are time, uv values are width and height, time values are angles of the arc
-                arc(obj.lightTime.getMinutes()*10, obj.lightTime.getMinutes()*10, obj.uvValue*40, obj.uvValue*40, obj.lightTime.getMinutes(), obj.lightTime.getHours());
-                // buttonText = 'Go to Rectangle View';
-
-            })     
-        }}
-
-        function mousePressed() {
-             buttonPressed = !buttonPressed;
-            }
-
-
-        function fetchData(){
-            let lightAssembledURL = ioURL+ioLimitQuery+ioLimitNumbers+"&"+ioStart+ioStartVal;
-            let uvAssembledURL = ioUVURL+ioLimitQuery+ioLimitNumbers+"&"+ioStart+ioStartVal;
+        </div>
+        <div class="boxF">
+            <H2>Data Collection</H2>
+            <p>Once my device was accurately collecting data, I carried it around with me while I completed my daily tasks. I put it on my desk while I worked, carried it with me around the house, and brought it with me when I walked my dogs. One night, I left it in the kitchen while I cooked and did the dishes, and I got some really interesting readings of the UV light going down and the overall light decreasing and then increasing as I turned on the inside lights.</p>
+            </div>
+        <div class="boxG">
+            <img src="https://freight.cargo.site/w/1000/q/75/i/d0193e893a8ce479ef1b42d0e3ff78e62597df163806087c4fdeb89dbeb4e1ca/011-rectangles.png">
+        </div>
+        <div class="boxH">
+            <h2>Data Mapping</h2>
+            <p>
+                I wanted to try mapping the data that I collected from the sunset to see how the correlation (or deviation) between UV, light, and time might look visually. I started coding in p5js by setting up the API function for the light sensor. I tested the API connection using a draw function to draw a circle for each light sensor value, with an x/y position that correlated with the time and a size and fill color that correlated with the amount of light. When it looked like it was working, I lowered the time window to a 10 minute period of sunset between 5:45pm and 5:55pm.            </p>
+                <p>Once the functions worked, I created another data handler function to bring in the data from the UV sensor. Within the draw function, I created rectangles that used the value set data. I figured out how to map the UV values to the RGB fill values, and then map the time to the x position and the UV values to the rectangle height. I was struggling to fill in the light values without issues. Though I liked the abstraction, I wanted to dig deeper and refine my javascript skills by making a more aesthetically pleasing image to represent all of the data.</p>
+                <p>I realized that I was thinking about the data as 4 separate parts: UV value, UV time, Light data, and Light time. Having these 4 arrays made finding specific points very difficult, and I was getting a ton of data when I ran the code. As an alternative, I created a value sets array, which housed all of the 4 variables at one point in time, together.
+                </p>
+                <p>I changed the color mode from RGB to HSB so that I could work more with bright/dark levels in the drawing. I adjusted the rectangles so that the the fill was a mapping of the light sensor values to two pi for hue, saturation, and brightness. The x position was mapped to the time in minutes, the width was refined, and the UV values were mapped to the height of the rectangles.</p>
             
-            //push each value set
-            for(let i = 0; i < ioLimitNumbers; i++){
-                valueSets.push({})
-            }
+        </div>
+        <div class="boxI">
+            <img src="https://freight.cargo.site/w/2346/q/94/i/1baee8b687b2f54a5116fafca60fc083a9bde5fe003349fab77639d1d1b091b2/012-arcs.png">
+            <img src="https://freight.cargo.site/w/2740/q/75/i/2412e0048351a0c644a190fb5cec13edf0117286fa48ad44f8204a25149e465d/012-arcs.png">
+        </div>
+        <div class="boxJ">
+            <h2>Final Presentation</h2>
+            <p>            When I was satisfied with how the data was represented as rectangles, I wanted to try a more abstract version. I used the same values as the rectangle values, but used the draw function to make an arc with a stroke instead. When viewing it, you can click through the two drawings by simply clicking on the canvas. By creating one version that was more figurative and one that was more abstract, I wanted to show that the same data can be mapped in completely different ways.
+            </p>
+        </div>
+        <div class="boxK">
+            <img src="https://freight.cargo.site/w/1500/q/75/i/c31a37a41df024819ade19797eb8d5a8ec349ecb6214a06800a1447c829baf17/rect.png">
 
-            console.log(lightAssembledURL, uvAssembledURL)
-            data1 = loadJSON(lightAssembledURL, dataHandler1, errorHandler);
-            data2 = loadJSON(uvAssembledURL, dataHandler2, errorHandler);
-
-        }
-
-    //handles the API data for light sensor
-        function dataHandler1(APIdata){
-            // lightValues = [];
-            // lightTimes = [];
-
-        //from the api data, for each element, log the value into the console
-        //regroup the separate arrays for time and value into one value set
-            APIdata.forEach((elem, i) => {
-                valueSets[i].lightValue = elem.value;
-                valueSets[i].lightTime = new Date(elem.created_at);
-                // lightValues[i]=elem.value;
-                // lightTimes[i] = new Date(elem.created_at);
-                console.log(elem.value);
-                console.log(valueSets[i]);
-            })
-        }
-
-    //handles the API data for UV sensor
-        function dataHandler2(APIdata){
-                // uvValues = [];
-                // uvTimes = [];
-
-           //from the api data, for each element, log the value into the console
-           //regroup the separate arrays for time and value into one value set
-
-            APIdata.forEach((elem, i) => {
-                valueSets[i].uvValue = elem.value;
-                valueSets[i].uvTime = new Date(elem.created_at);
-                // uvValues[i]=elem.value;
-                // uvTimes[i] = new Date(elem.created_at);
-                //console.log(uvValues);
-            })
-        }
-
-        //log errors
-        function errorHandler(APIerror) {
-            console.error(APIerror)
-        }
-    </script>
+        </div>
+        <div class="boxL">
+            <img src="https://freight.cargo.site/w/1500/q/75/i/35274459cbe1a969d625ca4edd3c3829d3d9112d9242f277a4910ca9ed5ee4e1/abstract.png">
+           </div>
+        <div class="boxM">
+            <h2>Reflections:</h2>
+            <p>One thing I was surprised by is the lack of correlation between the amount of light and the amount of UV. Because UV is only associated with daylight, but the light sensor can pick up all kinds of light, so the paths that they followed weren’t always the same. In the case of the sunset, the light correlated between those ten minutes. As I continue working on this data visualization, I’d like to explore the ways to represent the points at which UV and light values stray away from one another and come back together. 
+            </p>
+            </div>
+      </div>
 </body>
 </html>
