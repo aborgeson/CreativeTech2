@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;900&display=swap');
+
+body {
+    background: rgb(226,197,255);
+    background: radial-gradient(circle, rgba(226,197,255,1) 37%, rgba(255,197,239,1) 76%);
+}
+h1 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    font-size: 48px;
+    text-align: center;
+    color: white;
+}
+h2{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+    text-align: center;
+    color: white;
+}
+p {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    color: white;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 400px 1fr;
+    /* grid-auto-columns: 1fr 1fr; */
+    grid-auto-rows: 1fr 1fr 1fr 1fr 1fr;
+    /* gap: 15px; */
+    width: auto;
+    margin: auto;
+}
+    .boxA {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        margin-bottom: 0px;
+    }
+
+    .boxB {
+        display: flex;  
+        justify-content: center;  
+        align-items: center;  
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 6;
+        margin-bottom: 0px;
+        border-radius: 25px;
+        background: #FFC5C5;
+    }
+    .boxC {
+        display: flex;  
+        justify-content: center;  
+        align-items: center;  
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 6;
+        grid-row-end:8;
+        margin-bottom: 0px;
+        border-radius: 25px;
+        background: #FFC5EF;
+    }
+
+    #selfieButton {
+        width: 200px;
+        height: 200px;
+        box-shadow: 5px 5px #CDAED4;
+        border-radius: 100px;
+        cursor: pointer;
+        background-color: #FFC4EF;
+        transition: 0.3s;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 600;
+        font-size: 24px;
+        text-align: center;
+        color: white;
+
+    }
+    #selfieButton:hover{
+        background-color: #FABEEA;
+    }
+
+    #doorbellButton {
+        width: 150px;
+        height: 150px;
+        box-shadow: 5px 5px #CDAED4;
+        border-radius: 100px;
+        cursor: pointer;
+        background-color: #FFC4C4;
+        transition: 0.3s;
+    }
+    #doorbellButton:hover{
+        background-color: #F6BFBF;
+    }
