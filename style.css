@@ -54,6 +54,7 @@ body {
     z-index: 9;
     left: 50%;
     right: 50%;
+    top: 20%
   }
   .hiddenimg2 {
     display: none;
@@ -65,7 +66,7 @@ body {
     z-index: 9;
     left: 50%;
     right: 50%;
-    top: 38%;
+    top: 31%;
   }
   .hiddenimg3 {
     display: none;
@@ -77,7 +78,7 @@ body {
     z-index: 9;
     left: 50%;
     right: 50%;
-    top: 46%;
+    top: 44%;
   }
   .hiddenimg4 {
     display: none;
@@ -89,7 +90,7 @@ body {
     z-index: 9;
     left: 50%;
     right: 50%;
-    top: 55%;
+    top: 58%;
   }
   .hiddenimg5 {
     display: none;
@@ -101,6 +102,7 @@ body {
     z-index: 9;
     left: 50%;
     right: 50%;
+    top: 50%
   }
   .hiddenimg6 {
     display: none;
@@ -123,6 +125,7 @@ body {
     z-index: 9;
     left: 50%;
     right: 50%;
+    top: 56%
   }
   
 .grid-container {
