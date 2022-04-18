@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DVD Pong</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="navbar">
+        <a href="https://aborgeson.github.io/CreativeTech2/index.html">Arianna's Creative Tech 2 Page</a>
+    </div>
+    <div class="grid">
+        <div class="boxA">
+            <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/699902901?h=358ed7494c&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="DVD Pong"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+        </div>
+        <div class="boxB">
+            <h1>DVD Pong</h1>
+            <h2>Design Brief:</h2>
+            <p>
+                In this project we will explore the technical components of a video-based game: the physics and mechanics expressed in code, and the physical-to-digital connection from the game controller to the screen. You will have to consider goals and motivations for the players, the scoring system, the narrative, the art and atmosphere, and the physical aspects of play embodied in the ergonomic concerns. While complex, the result need not be complcated - but fun is mandatory! The outcome of the project will be an original video game and a custom controller for it.
+        </div>
+        <div class="boxC">
+            <img src="https://freight.cargo.site/w/2269/q/94/i/be8ea8551abec0f37c37264d5676883468a998f5270ae3fce05f66de14dac719/000-diagram.jpg">
+
+            <img src="https://freight.cargo.site/w/976/q/94/i/42b2b183663ee49a29b9ef56bd493924a9455145ae4e0fd9f161116df8f02966/002-add-dvd-image.png">
+            <img src="https://freight.cargo.site/w/792/q/94/i/034d9ad101bd61d29f815615293b9d67669a95e79890dc21d289e92a133782b5/003-change-dvd-color-using-a-function.png">
+            
+            <img src="            https://freight.cargo.site/w/1124/q/94/i/62f8358c2c8d3ab43aa63f014eb07ba4376d5202d4978e67bf9410e6415c5a59/007-paddle-int-changed-to-void--scoring-removed.png">
+            <img src="https://freight.cargo.site/w/1500/q/75/i/7ba6f5ac62efbbea457aeddb0529af07c13a980caaa84fcb3eaddddbe52175de/009-ball-corner-score-function.png">
+            <img src="https://freight.cargo.site/w/1122/q/94/i/6182145052c978f6d5f76b93715ef1f1dee0ade23aea9f50d420e241ddfb937e/019-play-sounds-w-paddle-in-classes.png">
+
+        </div>
+        <div class="boxD">
+            <h2>Game concept:
+            </h2>
+            <p>
+                DVD Pong is a spin on the classic Pong game, but with a fun twist. Players use the paddle to try and hit the DVD logo into the corner of the screen to win points. Every time the DVD logo goes off screen, players lose points. </p>
+                <h2>                    Goals:</h2>
+                <p>
+                        Use a color-changing DVD logo instead of a ball
+                        Program some kind of corner detection
+                        Make the controller feel fun and intuitive
+                    </p>
+                    <h2>Mechanics:</h2>
+                    <p>
+                        A paddle on the right side of the screen that moves up and down, controlled by the physical controller (player).
+                        A DVD logo that collides with the paddle and edges of the screen and bounces in the opposite x/y direction
+                        A score that increases each time the logo hits the corner of the screen 
+                    </p>
+                    <h2>Background Story:</h2>
+                    <p>
+                    I began this project by working through the Pong example code and trying to figure out a way to make it more dynamic and nostalgic. I remembered the old DVD logo screensaver and how badly we wanted it to hit the corner, but the movement was out of our control. This seemed like a good opportunity to create a situation of fun control over the logo screensaver. I started with a sketch of how I imagine it would work.
+                </p> 
+                   <p>When I began coding, I used the mouse as a controller and started with adjusting the pong code and adding the dvd logo. Then, I made it so that it changed colors whenever it collided with the edge of the screen and the paddle. </p>
+           <p>DVD Pong differs from traditional Pong in that points are scored by hitting the DVD logo into the corner or the screen (not on the paddle hit). I struggled with figuring out how to create zones that would make the points go up, and started by creating 4 rectangles in each corner that would increase the score if hit (similar to the logo/paddle mechanic). This didn’t work, so I then turned the corner zones into false booleans and wrote an if() statement within the point score int that checked the logo positioning and changed the boolean to true if the logo was in the zone. Within the main sketch, I defined the tolerance of those corner zones.</p>
+           <p>
+            I struggled a bit with adding the sound to the classes, but with some help I figured it out and I was able to add some web-sourced sound effects for the logo hitting the paddle, a missed hit, and a point score within each function.
+           </p>
+                </div>
+        <div class="boxE">
+           <img src="https://freight.cargo.site/w/1000/q/75/i/e28578cec7490b64a606337719aab367f87d06268e37f2bbebcd50a12835d531/011-pinout.jpg">
+           <img src="https://freight.cargo.site/w/1000/q/75/i/9b164ecd27642a7d5f753a9cd8241951a363f8aa10186fb5a9e3fdf73537dc07/IMG_6258.jpg">
+           <img src="https://freight.cargo.site/w/744/q/94/i/becabbe24d83e3e943d423b0bc9116374f3e1f8583e8fe663100c09588e37c7c/015-map-serial-values--there-was-jitter-though.png">
+           <img src="https://freight.cargo.site/w/650/q/94/i/53195a9056a96b298bf0a17362fa0c7f9bda5eed480879aece279f75e100d471/016-fix-threshold.png">
+        </div>
+        <div class="boxF">
+            <h2>Controller:</h2>
+            <p>
+                For this project, I decided to use a tilt sensor to best map the movement of the paddle to the on-screen mechanic. The tilt sensor had an x, y, and z axis, but I ended up only connecting the x since I only needed it to tilt up and down. I sketched out a few ideas for the controller’s packaging, including ping pong paddles with DVDs glued to them, but I decided that a tilt sensor would work best in a controller that felt more neutral to hold. I decided on a ‘remote control’ made out of cardboard and a paper cover.
+            </p>
+            <h2>Connecting the controller and game:</h2>
+            <p>
+                I used a serial connection in Processing to connect the controller. Then, I mapped the values from the sensor to the height of the screen, and set the paddle.moveTo() function to the mapped variable.
+                
+                Once I had the controller working, the paddle was a bit jittery. I observed how many serial values were fluctuating from the sensor, then wrote an if() statement within my Processing code that ran the controller mapping ONLY if the absolute value of the current value-previous value was greater than or equal to a set threshold value. The current value was defined as the previous value at the end of the draw() loop, so that it continuously updated. 
+    
+                There was a lot of testing that went into figuring out the proper threshold. Once I found a good value (25), the movement of the paddle was much smoother and the game became a bit easier.
+            </p>
+            </div>
+        
+<div class="boxG">
+<div style="padding:62.94% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/699914877?h=7c9e17bf71&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="DVD Pong Key Moments"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+
+</div>
+<div class="boxH">
+    <h2>Key Moments:</h2>
+    <p>
+        Ball hitting paddle
+        <br>Ball hitting corner and scoring a point
+        <br>Ball going off screen and resetting
+                </p>
+        <h2>Play Tester Opinions:</h2>
+        <p>
+        “It’s difficult!” - Giah
+        <br>“NOOOOO I lost!” -Anna
+        <br>“I love the winning noise.” - Anna
+        <br>“The controller is a little wobbly.” -Nacho
+        
+                </p>
+</div>
+<div class="boxI">
+    <h2>Reflections:</h2>
+    <p>
+    This was my first time designing and programming a game, and it was very fun. Figuring out how to map real controller values to mechanics and movements within the game was a challenge, but it ultimately helped my understand (and appreciate) how video games are made. I also enjoyed using object-oriented programming, as it helped me compartmentalize and solve problems while coding. I would really like to continue building games, and I would also love to create a higher fidelity controller for DVD Pong.
+    </p>
+</div>
+</div>
+      </div>
+</body>
+</html>

@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Quantico:wght@400;700&display=swap');
+
+html {
+    background-color: #FFF400;
+    border: 5px solid black;
+}
+h1 {
+    font-family: 'Quantico', sans serif;
+    font-weight: 700;
+    text-align: left;
+}
+h2{
+    font-family: 'Quantico', sans serif;
+    font-weight: 300;
+    text-align: left;
+}
+p{
+    font-family: 'Quantico', sans serif;
+    font-weight: 300;
+    text-align: left;
+    font-size: 18px;
+}
+body {
+  margin-top: 50px;
+  margin-left: 0px;
+}
+
+ .navbar {
+    overflow: hidden;
+    background-color: #FFF400;
+    border: 5px solid black;
+    position: fixed;
+    top: 0; 
+    width: 100%; 
+    font-family: 'Quantico', sans serif;
+    font-weight: 700;
+    font-size: 24pt;
+    text-align: left;
+  }
+  
+  .navbar a {
+    float: left;
+    display: block;
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .navbar a:hover {
+    text-decoration: black wavy underline;
+  }
+  
+  .main {
+    margin-top: 50px; 
+  } 
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 15px;
+    width: auto;
+    height: auto;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 0px;
+}
+    .boxA {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        margin-top: 65px;
+        margin-bottom: 0px;
+        max-width: 125%;
+    }
+    .boxB {
+        grid-column: 2 / 4;
+        grid-row: 1 / 2;
+        margin-top: 50px;
+        overflow: auto;
+        max-width: 100%;
+
+    }
+    .boxC {
+        justify-self: stretch;
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        overflow: auto;
+        max-width: 100%
+    }
+    .boxC img {
+        max-width: 49%;
+    }
+    .boxD {
+        align-items: center;
+        justify-items: center;
+        grid-column: 2 / 4;
+        grid-row: 2 / 3;
+        overflow: auto;
+        max-width: 100%;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .boxE {
+        justify-self: stretch;
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        overflow: auto;
+        max-width: 100%
+    }
+    .boxE img {
+        max-width: 49%;
+    }
+    .boxF {
+        align-items: center;
+        justify-items: center;
+        grid-column: 2 / 4;
+        grid-row: 3 / 4;
+        overflow: auto;
+        max-width: 100%
+    }
+    .boxG {
+        align-items: center;
+        justify-items: center;
+        grid-column: 1 / 2;
+        grid-row: 4 / 5;
+        overflow: auto;
+        max-width: 100%
+    }
+    .boxG img {
+        max-width: 100%;
+    }
+    .boxH {
+        align-items: center;
+        justify-items: center;
+        grid-column: 2 / 4;
+        grid-row: 4 / 5;
+        overflow: auto;
+        max-width: 100%
+    }
+    .boxH img {
+        max-width: 50%;
+    }
+    .boxI {
+        grid-column: 1 / 4;
+        grid-row: 5 / 6;
+        overflow: auto;
+        max-width: 100%
+    }
+    .boxI img {
+        max-width: 100%;
+    }
+    .boxJ {
+        grid-column: 2 / 4;
+        grid-row: 5 / 6;
+        overflow: auto;
+        max-width: 100%
+    }
+    .boxJ img {
+        max-width: 100%;
+    }
+    .boxK {
+        grid-column: 1 / 2;
+        grid-row: 6 / 7;
+        overflow: auto;
+        max-width: 100%
+    }
+    .boxK img {
+        max-width: 100%;
+    }
+    .boxL {
+        grid-column: 2 / 4;
+        grid-row: 6 / 7;
+        overflow: auto;
+        max-width: 100%
+    }
+    .boxL img {
+        max-width: 100%;
+    }
+    .boxM {
+        grid-column: 1 / 4;
+        grid-row: 7 / 8;
+        overflow: auto;
+        max-width: 100%
+    }
